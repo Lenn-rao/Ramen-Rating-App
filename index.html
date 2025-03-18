@@ -13,12 +13,12 @@
 
     <div id="ramen-detail" class="detail">
         <h2 id="ramen-name">Select a Ramen</h2>
-        <img id="ramen-image" src="gyukotsu.jpg" alt="">
-        <img src="shawarma.jpeg" alt="">
-        <img src="kojiro.jpg" alt="">
-        <img src="naruto.jpg" alt="">
+        <img id="ramen-image" src="gyukotsu.jpg" alt="" class="my-images">
+        <img src="shawarma.jpeg" alt="" class="my-images">
+        <img src="kojiro.jpg" alt="" class="my-images">
+        <img src="naruto.jpg" alt="" class="my-images">
         <li>
-            <img src="nirvana.jpg" alt="">
+            <img src="nirvana.jpg" alt="" class="replacedImage">
         </li>
         <p><strong>Restaurant:</strong> <span id="restaurant-name"></span></p>
         <p><strong>Rating:</strong> <span id="ramen-rating"></span></p>
@@ -34,7 +34,7 @@
         <input type="number" id="new-rating" min="1" max="5" placeholder="Rating" required>
         <input type="text" id="new-comment" placeholder="Comment" required>
         <input type="url" id="new-image" placeholder="Image URL" required>
-        <button type="submit">Add Ramen</button>
+        <button type="submit" id="myButton">Add Ramen</button>
     </form>
 
     <script src="index.js"></script>

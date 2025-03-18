@@ -38,3 +38,7 @@ input, button {
     width: 400px;
     margin: 0 auto;
 }
+
+#new-ramen-form input{
+    width: 200px;
+}

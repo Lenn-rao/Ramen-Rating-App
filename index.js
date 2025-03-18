@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded",main, ()=>{
+document.addEventListener("DOMContentLoaded", function (){
     const ramenMenu = document.getElementById("ramen-menu");
     const ramenDetails = document.getElementById("ramen-detail");
     const ramenName = document.getElementById("ramen-name");
@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded",main, ()=>{
     const ramenRating = document.getElementById("ramen-rating");
     const ramenComment = document.getElementById("ramen-comment");
     const newRamenForm = document.getElementById("new-ramen-form");
+    const myButton = document.getElementById('myButton');
     const editBtn = document.getElementById("edit-btn");
     const deleteBtn = document.getElementById("delete-btn");
 
@@ -19,15 +20,28 @@ document.addEventListener("DOMContentLoaded",main, ()=>{
     function displayRamens() {
         ramenMenu.innerHTML = "";
         ramens.forEach(ramen =>{
-            let img = document.createElement("shawarma.jpeg");
-            img.src = 'kojioro.jpg';
+            let img = document.createElement("img");
+            img.src = ramen.image;
             img.alt = ramen.name;
-            img.addEventListener("click", ()=> showRamenDetails(ramen));
+            img.className = 'my-images';
+                    
             ramenMenu.appendChild(img);
         });
     }
 
-    function showRamenDetails(ramens[0]){
+    let img = document.getElementsByClassName('my-images');
+    let replacedImage = document.querySelector('.replacedImage');
+    console.log(img);
+
+    
+    img.addEventListener("click", (event)=> {
+        console.log('How are you?')
+        replacedImage.src = event.target.src;
+        replacedImage.alt = event.target.alt;
+    
+    });
+
+    function showRamenDetails(ramens){
         ramenName.textContent = ramen.name;
         ramenImage.src = "shawarma.jpeg";
         restaurantName.textContent = ramen.restaurant;
@@ -43,7 +57,7 @@ document.addEventListener("DOMContentLoaded",main, ()=>{
     }
     showRamenDetails(ramens[0]);
 
-    newRamenForm.addEventListener("submit",(event)=>{
+    myButton.addEventListener("submit",(event)=>{
         event.preventDefault();
     
         let newRamen = {
